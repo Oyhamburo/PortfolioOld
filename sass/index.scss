@@ -73,12 +73,15 @@
 }
 
 .portada{
-    height: 73vh;
+    height: 74vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    & span{
+        @extend.html;
+    }
     & h1{
-        font-size: 4rem;
+        font-size: 5rem;
         letter-spacing: -5px;
         & span{
             font-size: 4rem;
@@ -89,9 +92,6 @@
         }
     }
     &__html{
-        & span{
-            @extend.html;
-        }
         &__body{
             padding-left: 1rem;
         }
@@ -115,9 +115,7 @@
             padding-left: 0.5rem;
             font-size: 1.7rem;
         }
-        & span{
-            @extend.html;
-        }
+
         &__contacto{
             margin-top: 2rem;
             padding-left: 2rem;
@@ -162,7 +160,9 @@
             padding-left: 1rem;
             font-family: "Open Sans",sans-serif;
         }
-
+        & span {
+            @extend.html;
+        }
     }
     &__bot{
         padding: 1rem 0;
@@ -290,14 +290,59 @@
         }
     }
 }
+//boton mobile
+
+.container{
+    display: none;
+    position: fixed;
+    right: 2rem;
+    top: 1rem;
+    cursor: pointer;
+    z-index: 99;
+}
+.bar1, .bar2, .bar3 {
+    width: 35px;
+    height: 5px;
+    background-color: rgb(207, 207, 207);
+    margin: 6px 0;
+    transition: 0.4s;
+  }
+  
+  .change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+  }
+  
+  .change .bar2 {opacity: 0;}
+  
+  .change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+  }
 
 @media only screen and (max-width:1300px){
+    .container{
+        display: block;
+    }
     body{
         padding-left: 1rem ;
     }
     nav{
-        display: none !important;
+        display: none ;
     }
+    .nav{
+        width: 100vw;
+        z-index: 9;
+        height: 60vh;
+    }
+    .nav__bot{
+        padding-top: 1rem;
+        justify-content: center;
+        & a{
+            padding: 0 1rem;
+        }
+    }
+
     @media only screen and (max-width:1024px){
         .portfolio__bot__container {
             flex-direction: column;
@@ -310,6 +355,9 @@
         }
         .footer__container{
             flex-direction: column;
+        }
+        .portfolio__bot__container__img {
+            width: 50%;
         }
         @media only screen and (max-width:767px){
             .ghost{

@@ -4,7 +4,7 @@
   font-size: 1rem;
   font-family: 'Maven Pro', sans-serif; }
 
-.html, .portada__html span, .portada__html__h1, .portada__titulo__h1, .portada__subtitulo span, .portfolio__top span, .portfolio__bot span, .footer span {
+.html, .portada span, .portada__html__h1, .portada__titulo__h1, .portfolio__top span, .portfolio__mid span, .portfolio__bot span, .footer span {
   color: #515152;
   font-family: 'Grape Nuts', cursive;
   font-size: 1.5rem; }
@@ -80,12 +80,12 @@ body {
       transition: color 0.3s; }
 
 .portada {
-  height: 73vh;
+  height: 74vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between; }
   .portada h1 {
-    font-size: 4rem;
+    font-size: 5rem;
     letter-spacing: -5px; }
     .portada h1 span {
       font-size: 4rem; }
@@ -230,11 +230,48 @@ body {
     .footer__container__right img {
       width: 100%; }
 
+.container {
+  display: none;
+  position: fixed;
+  right: 2rem;
+  top: 1rem;
+  cursor: pointer;
+  z-index: 99; }
+
+.bar1, .bar2, .bar3 {
+  width: 35px;
+  height: 5px;
+  background-color: #cfcfcf;
+  margin: 6px 0;
+  transition: 0.4s; }
+
+.change .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+  transform: rotate(-45deg) translate(-9px, 6px); }
+
+.change .bar2 {
+  opacity: 0; }
+
+.change .bar3 {
+  -webkit-transform: rotate(45deg) translate(-8px, -8px);
+  transform: rotate(45deg) translate(-8px, -8px); }
+
 @media only screen and (max-width: 1300px) {
+  .container {
+    display: block; }
   body {
     padding-left: 1rem; }
   nav {
-    display: none !important; } }
+    display: none; }
+  .nav {
+    width: 100vw;
+    z-index: 9;
+    height: 60vh; }
+  .nav__bot {
+    padding-top: 1rem;
+    justify-content: center; }
+    .nav__bot a {
+      padding: 0 1rem; } }
 
 @media only screen and (max-width: 1300px) and (max-width: 1024px) {
   .portfolio__bot__container {
@@ -244,7 +281,9 @@ body {
   .portfolio__mid {
     width: 100%; }
   .footer__container {
-    flex-direction: column; } }
+    flex-direction: column; }
+  .portfolio__bot__container__img {
+    width: 50%; } }
 
 @media only screen and (max-width: 1300px) and (max-width: 1024px) and (max-width: 767px) {
   .ghost {
